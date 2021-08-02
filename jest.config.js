@@ -1,11 +1,11 @@
-module.export = {
+module.exports = {
     roots: ['<rootDir>/src'],
-    setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
     testMatch: [
         '<rootDir>/src/**/__tests__/**/*.{js,jsx}',
         '<rootDir>/src/**/*.{spec,test}.{js,jsx}'
     ],
     testEnvironment: 'jsdom',
-    moduleFileExtensions: ['js', 'jsx', 'json', 'node'],
-    testPathIgnorePatterns: ['/node_modules/', '/dist/']
+    moduleFileExtensions: ['js', 'jsx'],
+    testPathIgnorePatterns: ['/node_modules/', '/dist/'],
+    setupFilesAfterEnv: ['<rootDir>/src/setupTests.js']
 };

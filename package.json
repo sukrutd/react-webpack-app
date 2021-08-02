@@ -9,7 +9,7 @@
         "analyze:prod": "npm run build:prod -- --env presets=analyze",
         "compress:prod": "npm run build:prod -- --env presets=compress",
         "supported-browsers": "npx browserslist",
-        "test:watch": "jest --watch",
+        "test:watch": "jest --watchAll",
         "test": "jest"
     },
     "author": "Sukrut Daphalapurkar",
