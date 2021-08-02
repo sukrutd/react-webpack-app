@@ -8,6 +8,8 @@
         "prettier"
     ],
     "plugins": [
+        "testing-library",
+        "jest-dom",
         "unicorn",
         "import",
         "simple-import-sort",
@@ -63,9 +65,16 @@
     },
     "env": {
         "browser": true,
+        "es2020": true,
         "node": true,
-        "es2020": true
+        "jest": true
     },
+    "overrides": [
+        {
+            "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+            "extends": ["plugin:testing-library/react", "plugin:jest-dom/recommended"]
+        }
+    ],
     "settings": {
         "react": {
             "version": "detect"

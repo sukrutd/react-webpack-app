@@ -7,3 +7,4 @@ babel.config.js
 webpack.config.js
 postcss.config.js
 module.aliases.js
+jest.config.js

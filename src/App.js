@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = () => {
-    return <div>React App ({process.env.NODE_ENV} mode)</div>;
+    return <div>React App</div>;
 };
 
 export default App;
