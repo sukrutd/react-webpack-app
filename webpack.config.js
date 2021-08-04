@@ -32,8 +32,9 @@ module.exports = ({ mode = 'production', buildEnvironment = 'prod', presets = []
             },
             output: {
                 path: path.resolve(__dirname, 'dist'),
-                assetModuleFilename: 'images/[hash][ext][query]',
-                filename: '[name].[contenthash].js',
+                filename: '[name].[contenthash:8].js',
+                chunkFilename: '[id].[contenthash:8].js',
+                assetModuleFilename: 'images/[contenthash:8][ext][query]',
                 clean: true
             },
             module: {

@@ -29,7 +29,6 @@ module.exports = {
         runtimeChunk: false,
         splitChunks: {
             chunks: 'all',
-            minChunks: 2,
             automaticNameDelimiter: '.'
         },
         minimizer: [
@@ -54,8 +53,8 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
-            chunkFilename: '[id].[contenthash].css'
+            filename: '[name].[contenthash:8].css',
+            chunkFilename: '[id].[contenthash:8].css'
         })
     ]
 };
