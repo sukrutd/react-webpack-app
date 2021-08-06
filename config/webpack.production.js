@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const cssLoaders = [
     MiniCssExtractPlugin.loader,
@@ -28,12 +29,22 @@ module.exports = {
     optimization: {
         runtimeChunk: false,
         splitChunks: {
+            minSize: 0,
             chunks: 'all',
-            automaticNameDelimiter: '.'
+            automaticNameDelimiter: '.',
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name(module) {
+                        return module.context
+                            .match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
+                            .replace('@', '');
+                    }
+                }
+            }
         },
         minimizer: [
             (compiler) => {
-                const TerserPlugin = require('terser-webpack-plugin');
                 new TerserPlugin({
                     parallel: true,
                     extractComments: false,

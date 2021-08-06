@@ -1,5 +1,4 @@
 const path = require('path');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const cssLoaders = [
     'style-loader',
@@ -30,6 +29,5 @@ module.exports = {
                 use: scssLoaders
             }
         ]
-    },
-    plugins: [new ReactRefreshWebpackPlugin()]
+    }
 };
