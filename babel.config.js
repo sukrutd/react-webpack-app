@@ -2,7 +2,7 @@ const moduleAliases = require('./module.aliases');
 
 module.exports = {
     presets: [
-        ['@babel/preset-env', { useBuiltIns: 'usage', corejs: '3.8' }],
+        ['@babel/preset-env', { useBuiltIns: 'usage', corejs: 3.9 }],
         ['@babel/preset-react', { runtime: 'automatic' }]
     ],
     plugins: [

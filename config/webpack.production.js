@@ -29,17 +29,12 @@ module.exports = {
     optimization: {
         runtimeChunk: false,
         splitChunks: {
-            minSize: 0,
             chunks: 'all',
             automaticNameDelimiter: '.',
             cacheGroups: {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
-                    name(module) {
-                        return module.context
-                            .match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                            .replace('@', '');
-                    }
+                    name: 'node-vendors'
                 }
             }
         },
