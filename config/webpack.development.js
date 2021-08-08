@@ -13,7 +13,10 @@ module.exports = {
     target: 'web',
     devtool: 'inline-cheap-module-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, 'dist'),
+        contentBase: path.resolve(__dirname, '..', 'dist'),
+        historyApiFallback: true,
+        stats: 'errors-only',
+        publicPath: '/',
         port: '3000',
         open: true,
         hot: true

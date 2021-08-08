@@ -35,6 +35,7 @@ module.exports = ({ mode = 'production', buildEnvironment = 'prod', presets = []
                 filename: '[name].[contenthash:8].js',
                 chunkFilename: '[id].[contenthash:8].js',
                 assetModuleFilename: 'images/[contenthash:8][ext][query]',
+                publicPath: '/',
                 clean: true
             },
             module: {
